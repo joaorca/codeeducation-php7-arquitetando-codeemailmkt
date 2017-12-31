@@ -3,5 +3,50 @@
 {% block title %}Teste{% endblock %}
 
 {% block content %}
-<h1>Rota de Testes</h1>
+
+
+    <h1>Rota de Testes</h1>
+
+    <h3>Clientes</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>eMail</th>
+            <th>CPF</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.cpf }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Endereços</h3>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>CEP</th>
+            <th>Logradouro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for endereco in enderecos %}
+            <tr>
+                <td>{{ endereco.cep }}</td>
+                <td>{{ endereco.logradouro }}</td>
+                <td>{{ endereco.cidade }}</td>
+                <td>{{ endereco.estado }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
