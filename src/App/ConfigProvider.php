@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 /**
  * The configuration provider for the App module
  *
@@ -38,6 +39,7 @@ class ConfigProvider
             ],
             'factories'  => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
+                Action\TesteAction::class => Action\TesteFactory::class,
             ],
         ];
     }
