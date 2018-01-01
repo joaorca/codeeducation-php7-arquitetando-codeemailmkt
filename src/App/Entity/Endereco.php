@@ -38,4 +38,12 @@ class Endereco
      */
     public $estado;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Cliente", inversedBy="enderecos")
+     * @ORM\JoinColumn(name="cliente_id", referencedColumnName="id")
+     */
+    public $cliente;
+
+
+
 }

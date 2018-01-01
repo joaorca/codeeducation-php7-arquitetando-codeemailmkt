@@ -3,7 +3,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity
@@ -32,5 +34,15 @@ class Cliente
      * @ORM\Column(type="string", length=11)
      */
     public $cpf;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Endereco", mappedBy="cliente")
+     */
+    public $enderecos;
+
+    public function __construct()
+    {
+        $this->enderecos = new ArrayCollection();
+    }
 
 }

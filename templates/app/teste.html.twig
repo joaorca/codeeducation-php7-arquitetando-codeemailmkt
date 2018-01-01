@@ -14,6 +14,7 @@
             <th>Nome</th>
             <th>eMail</th>
             <th>CPF</th>
+            <th>Endereços</th>
         </tr>
         </thead>
         <tbody>
@@ -22,6 +23,16 @@
                 <td>{{ cliente.nome }}</td>
                 <td>{{ cliente.email }}</td>
                 <td>{{ cliente.cpf }}</td>
+                <td>
+                    {% for endereco in cliente.enderecos %}
+                        {{ loop.index }}.
+                        {{ endereco.logradouro }} /
+                        {{ endereco.cidade }} /
+                        {{ endereco.estado }} /
+                        {{ endereco.cep }}
+                        <br/>
+                    {% endfor %}
+                </td>
             </tr>
         {% endfor %}
         </tbody>
@@ -35,6 +46,7 @@
             <th>Logradouro</th>
             <th>Cidade</th>
             <th>Estado</th>
+            <th>Cliente</th>
         </tr>
         </thead>
         <tbody>
@@ -44,6 +56,7 @@
                 <td>{{ endereco.logradouro }}</td>
                 <td>{{ endereco.cidade }}</td>
                 <td>{{ endereco.estado }}</td>
+                <td>{{ endereco.cliente.nome }}</td>
             </tr>
         {% endfor %}
         </tbody>
