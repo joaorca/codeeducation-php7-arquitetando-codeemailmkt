@@ -41,6 +41,8 @@ class ConfigProvider
                 Application\Action\TesteAction::class => Application\Action\TesteFactory::class,
 
                 Application\Action\ClienteListAction::class => Application\Action\Factory\ClienteListFactory::class,
+                Application\Action\ClienteCreateAction::class => Application\Action\Factory\ClienteCreateFactory::class,
+                Application\Action\ClienteUpdateAction::class => Application\Action\Factory\ClienteUpdateFactory::class,
 
                 Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
                 Domain\Persistence\ClienteRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\ClienteRepositoryFactory::class,

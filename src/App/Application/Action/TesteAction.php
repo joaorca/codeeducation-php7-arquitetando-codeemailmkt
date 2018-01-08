@@ -36,12 +36,9 @@ class TesteAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $this->up();
-
+        //$this->up();
         $clientList = $this->clienteRepository->findAll();
-        var_dump($clientList);
-
-        return new HtmlResponse("Hello");
+        return new HtmlResponse($this->template->render("app::cliente/list",['clienteList' => $clientList]));
     }
 
     private function up()

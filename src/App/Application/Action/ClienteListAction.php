@@ -35,7 +35,7 @@ class ClienteListAction
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         $clientList = $this->clienteRepository->findAll();
-        return new HtmlResponse($this->template->render("app::customer/list",['clienteList' => $clientList]));
+        return new HtmlResponse($this->template->render("app::cliente/list",['clienteList' => $clientList]));
     }
 
 }

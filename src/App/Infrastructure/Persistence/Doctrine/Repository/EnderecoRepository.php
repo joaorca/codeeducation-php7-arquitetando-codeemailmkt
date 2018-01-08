@@ -6,6 +6,7 @@ namespace App\Infrastructure\Persistence\Doctrine\Repository;
 
 use App\Domain\Persistence\EnderecoRepositoryInterface;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\UnitOfWork;
 
 class EnderecoRepository extends EntityRepository implements EnderecoRepositoryInterface
 {
@@ -19,7 +20,11 @@ class EnderecoRepository extends EntityRepository implements EnderecoRepositoryI
 
     public function update($entity)
     {
-        // TODO: Implement update() method.
+        if ($this->getEntityManager()->getUnitOfWork()->getEntityState($entity) != UnitOfWork::STATE_MANAGED) {
+            $this->getEntityManager()->merge($entity);
+        }
+        $this->getEntityManager()->flush();
+        return $entity;
     }
 
     public function remove($entity)

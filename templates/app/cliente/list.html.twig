@@ -13,7 +13,7 @@
     <div class="row">
         <div class="box">
             <div class="box-header">
-                <a class="btn btn-app" href="">
+                <a class="btn btn-app" href="{{ url("cliente.create") }}">
                     <i class="fa fa-plus-circle"></i> Novo
                 </a>
             </div>
@@ -46,7 +46,7 @@
                                 {% endfor %}
                             </td>
                             <td>
-                                <a href="">Editar</a>
+                                <a href="{{ url("cliente.update", {id:cliente.id}) }}">Editar</a>
                             </td>
                         </tr>
                     {% endfor %}
