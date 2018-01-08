@@ -1,0 +1,24 @@
+#App.Domain.Entity.Cliente.dcm.yml
+App\Domain\Entity\Cliente:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\ClienteRepository
+  oneToMany:
+    enderecos:
+      targetEntity: Endereco
+      mappedBy: cliente
+  table: clientes
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    nome:
+      type: string
+      length: 200
+    email:
+      type: string
+      length: 120
+    cpf:
+      type: string
+      length: 11

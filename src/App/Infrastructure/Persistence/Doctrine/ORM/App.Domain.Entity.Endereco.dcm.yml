@@ -1,0 +1,30 @@
+#App.Domain.Entity.Endereco.dcm.yml
+App\Domain\Entity\Endereco:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\EnderecoRepository
+  manyToOne:
+    cliente:
+      targetEntity: Cliente
+      inversedBy: enderecos
+      joinColumn:
+        name: cliente_id
+        referencedColumnName: id
+  table: enderecos
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    cep:
+      type: string
+      length: 8
+    logradouro:
+      type: string
+      length: 120
+    cidade:
+      type: string
+      length: 120
+    estado:
+      type: string
+      length: 2
