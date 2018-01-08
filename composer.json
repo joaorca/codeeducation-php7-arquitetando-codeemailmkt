@@ -12,6 +12,7 @@
         "doctrine/doctrine-orm-module": "^1.1",
         "http-interop/http-middleware": "^0.4.1",
         "roave/security-advisories": "dev-master",
+        "symfony/yaml": "^4.0",
         "zendframework/zend-component-installer": "^1.0",
         "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-expressive": "^2.0.5",
