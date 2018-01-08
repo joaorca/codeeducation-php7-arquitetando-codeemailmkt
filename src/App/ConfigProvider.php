@@ -40,6 +40,8 @@ class ConfigProvider
                 Action\HomePageAction::class => Action\HomePageFactory::class,
                 Application\Action\TesteAction::class => Application\Action\TesteFactory::class,
 
+                Application\Action\ClienteListAction::class => Application\Action\Factory\ClienteListFactory::class,
+
                 Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
                 Domain\Persistence\ClienteRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\ClienteRepositoryFactory::class,
                 Domain\Persistence\EnderecoRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\EnderecoRepositoryFactory::class,
