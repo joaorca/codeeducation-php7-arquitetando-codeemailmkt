@@ -12,6 +12,20 @@ return [
                     'charset' => 'UTF8',
                 ]
             ]
+        ],
+        'driver' => [
+            'App_driver' => [
+                'class' => Doctrine\ORM\Mapping\Driver\YamlDriver::class,
+                'cache' => 'array',
+                'paths' => [
+                    __DIR__ . '/../../src/App/Infrastructure/Persistence/Doctrine/ORM',
+                ]
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    'App\Domain\Entity' => 'App_driver'
+                ]
+            ]
         ]
     ]
 ];

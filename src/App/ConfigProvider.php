@@ -38,6 +38,8 @@ class ConfigProvider
             ],
             'factories'  => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
+
+                Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
             ],
         ];
     }
