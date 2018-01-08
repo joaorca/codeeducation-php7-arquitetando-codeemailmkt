@@ -15,8 +15,6 @@ return [
         // key is the alias name, the value is the service to which it points.
         'aliases' => [
             'Zend\Expressive\Delegate\DefaultDelegate' => Delegate\NotFoundDelegate::class,
-            'Config' => 'config',
-            'Configuration' => 'config',
         ],
         // Use 'invokables' for constructor-less services, or services that do
         // not require arguments to the constructor. Map a service name to the

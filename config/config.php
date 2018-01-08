@@ -4,8 +4,6 @@ use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
 use Zend\ConfigAggregator\PhpFileProvider;
 
-require 'doctrine.php';
-
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
 // `config/autoload/local.php`.
 $cacheConfig = [
@@ -13,16 +11,6 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
-
-    \Zend\Cache\ConfigProvider::class,
-    \Zend\Paginator\ConfigProvider::class,
-    \Zend\Form\ConfigProvider::class,
-    \Zend\InputFilter\ConfigProvider::class,
-    \Zend\Filter\ConfigProvider::class,
-    \Zend\Hydrator\ConfigProvider::class,
-    \Zend\Router\ConfigProvider::class,
-    \Zend\Validator\ConfigProvider::class,
-
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 
