@@ -21,7 +21,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -36,10 +36,13 @@ class ConfigProvider
             'invokables' => [
                 Action\PingAction::class => Action\PingAction::class,
             ],
-            'factories'  => [
+            'factories' => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
+                Application\Action\TesteAction::class => Application\Action\TesteFactory::class,
 
                 Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
+                Domain\Persistence\ClienteRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\ClienteRepositoryFactory::class,
+                Domain\Persistence\EnderecoRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\EnderecoRepositoryFactory::class,
             ],
         ];
     }
@@ -53,8 +56,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => ['templates/app'],
-                'error'  => ['templates/error'],
+                'app' => ['templates/app'],
+                'error' => ['templates/error'],
                 'layout' => ['templates/layout'],
             ],
         ];
