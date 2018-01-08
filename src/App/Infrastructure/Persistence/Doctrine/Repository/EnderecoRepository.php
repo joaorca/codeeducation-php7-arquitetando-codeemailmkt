@@ -12,7 +12,9 @@ class EnderecoRepository extends EntityRepository implements EnderecoRepositoryI
 
     public function create($entity)
     {
-        // TODO: Implement create() method.
+        $this->getEntityManager()->persist($entity);
+        $this->getEntityManager()->flush();
+        return $entity;
     }
 
     public function update($entity)
