@@ -47,6 +47,8 @@
                             </td>
                             <td>
                                 <a href="{{ url("cliente.update", {id:cliente.id}) }}">Editar</a>
+                                <br />
+                                <a href="{{ url("cliente.delete", {id:cliente.id}) }}">Deletar</a>
                             </td>
                         </tr>
                     {% endfor %}

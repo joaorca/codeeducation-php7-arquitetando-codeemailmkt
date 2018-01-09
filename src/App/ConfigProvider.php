@@ -43,6 +43,7 @@ class ConfigProvider
                 Application\Action\ClienteListAction::class => Application\Action\Factory\ClienteListFactory::class,
                 Application\Action\ClienteCreateAction::class => Application\Action\Factory\ClienteCreateFactory::class,
                 Application\Action\ClienteUpdateAction::class => Application\Action\Factory\ClienteUpdateFactory::class,
+                Application\Action\ClienteDeleteAction::class => Application\Action\Factory\ClienteDeleteFactory::class,
 
                 Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
 

@@ -33,5 +33,6 @@ $app->get('/api/ping', App\Action\PingAction::class, 'api.ping');
 $app->get('/teste', App\Application\Action\TesteAction::class, 'teste');
 
 $app->get('/cliente', App\Application\Action\ClienteListAction::class, 'cliente.list');
-$app->route('/cliente/create', App\Application\Action\ClienteCreateAction::class, ['GET','POST'],'cliente.create');
-$app->route('/cliente/update/{id}', App\Application\Action\ClienteUpdateAction::class, ['GET','POST'], 'cliente.update');
+$app->route('/cliente/create', App\Application\Action\ClienteCreateAction::class, ['GET', 'POST'], 'cliente.create');
+$app->route('/cliente/update/{id}', App\Application\Action\ClienteUpdateAction::class, ['GET', 'POST'], 'cliente.update');
+$app->route('/cliente/delete/{id}', App\Application\Action\ClienteDeleteAction::class, ['GET', 'POST'], 'cliente.delete');

@@ -27,7 +27,8 @@ class ClienteRepository extends EntityRepository implements ClienteRepositoryInt
 
     public function remove($entity)
     {
-        // TODO: Implement remove() method.
+        $this->getEntityManager()->remove($entity);
+        $this->getEntityManager()->flush();
     }
 
 }
