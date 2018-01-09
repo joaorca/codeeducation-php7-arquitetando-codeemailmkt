@@ -38,13 +38,16 @@ class ConfigProvider
             ],
             'factories' => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
-                Application\Action\TesteAction::class => Application\Action\TesteFactory::class,
 
+                Application\Action\TesteAction::class => Application\Action\TesteFactory::class,
                 Application\Action\ClienteListAction::class => Application\Action\Factory\ClienteListFactory::class,
                 Application\Action\ClienteCreateAction::class => Application\Action\Factory\ClienteCreateFactory::class,
                 Application\Action\ClienteUpdateAction::class => Application\Action\Factory\ClienteUpdateFactory::class,
 
                 Application\Middleware\BootstrapMiddleware::class => Application\Middleware\BootstrapMiddlewareFactory::class,
+
+                Domain\Service\FlashMessageInterface::class => Infrastructure\Service\FlashMessageFactory::class,
+
                 Domain\Persistence\ClienteRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\ClienteRepositoryFactory::class,
                 Domain\Persistence\EnderecoRepositoryInterface::class => Infrastructure\Persistence\Doctrine\Repository\EnderecoRepositoryFactory::class,
             ],
