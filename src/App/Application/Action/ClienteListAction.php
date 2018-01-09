@@ -4,6 +4,7 @@ namespace App\Application\Action;
 
 use App\Domain\Persistence\ClienteRepositoryInterface;
 use App\Domain\Persistence\EnderecoRepositoryInterface;
+use App\Domain\Service\FlashMessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -34,8 +35,11 @@ class ClienteListAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
+        /** @var FlashMessageInterface $flash */
+        $flash = $request->getAttribute("flash");
+
         $clientList = $this->clienteRepository->findAll();
-        return new HtmlResponse($this->template->render("app::cliente/list",['clienteList' => $clientList]));
+        return new HtmlResponse($this->template->render("app::cliente/list", ['clienteList' => $clientList, 'message' => $flash->getMessage("success")]));
     }
 
 }

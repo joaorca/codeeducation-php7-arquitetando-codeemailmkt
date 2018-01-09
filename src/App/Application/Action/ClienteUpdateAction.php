@@ -4,6 +4,7 @@ namespace App\Application\Action;
 
 use App\Domain\Persistence\ClienteRepositoryInterface;
 use App\Domain\Persistence\EnderecoRepositoryInterface;
+use App\Domain\Service\FlashMessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -50,6 +51,10 @@ class ClienteUpdateAction
             $cliente->email = $data["email"];
             $cliente->cpf = $data["cpf"];
             $this->clienteRepository->update($cliente);
+
+            /** @var FlashMessageInterface $flash */
+            $flash = $request->getAttribute("flash");
+            $flash->setMessage("success", "Cliente alterado com sucesso");
 
             $uri = $this->router->generateUri("cliente.list");
             return new RedirectResponse($uri);
